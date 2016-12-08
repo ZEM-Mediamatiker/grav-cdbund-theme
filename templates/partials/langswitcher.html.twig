@@ -1,0 +1,23 @@
+ {% block langswitch %}
+    <h2 class="sr-only">Language selection</h2>
+    <nav class="nav-lang">
+        <ul class="">
+            {% set langobj = grav['language'] %}
+
+            {% for key in langswitcher.languages %}
+
+                {% if key == langswitcher.current %}
+                    {% set lang_url = page.url %}
+                    {% set active_class = ' active' %}
+                {% else %}
+                    {% set lang_url = base_url_simple ~ langobj.getLanguageURLPrefix(key)~langswitcher.page_route ?: '/' %}
+                    {% set active_class = '' %}
+                {% endif %}
+                
+                <li><a href="{{ lang_url ~ uri.params }}" class="external{{ active_class }}">{{  key|upper }}</a></li>
+                
+            {% endfor %}
+                
+        </ul>
+    </nav>
+{% endblock langswitch %}
