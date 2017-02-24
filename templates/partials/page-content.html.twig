@@ -1,0 +1,11 @@
+ {% block pagecontent %}
+    
+      
+      <a href="#" onclick="$.printPreview.printPreview()" class="hidden-xs icon icon--before icon--print pull-right" title="print"></a>
+          
+        {{ page.content }}
+                  
+      {% include 'partials/page-content-footer.html.twig' %}
+
+  
+{% endblock pagecontent %}

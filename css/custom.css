@@ -11,6 +11,20 @@ body {
     color: #606d6e;
 }
 
+#breadcrumbs{
+    padding-left: 0px;
+    line-height: 2.2rem;
+    height: auto;
+}
+
+#breadcrumbs span{
+    padding: 0 0.5rem;
+}
+
+.yamm .dropdown-menu{
+    left: 0;
+}
+
 h1,
 h2,
 h3,
@@ -18,6 +32,11 @@ h4,
 h5,
 h6 {
     color: #454B4D;
+}
+
+
+.search-result h1{
+    display: none;
 }
 
 a {
@@ -178,4 +197,46 @@ blockquote {
 
 .content-text h1{
     /*display: inline;*/
+}
+
+.dropdown-menu .form-horizontal{
+    width: 100%;
+}
+
+.dropdown-menu input{
+    width: 100%;
+}
+
+.search-padding{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dropdown-menu input:focus{
+    width: 100%;
+}
+
+.megamenu-close{
+    margin-bottom: 1em !important;
+}
+
+.megamenu-nav{
+    margin-top: 0px;
+}
+
+.megamenu-nav a{
+    line-height: 2;
+}
+
+
+@media only screen and (max-width: 767px){
+    
+    html{
+        overflow-x: visible;
+    }
+    
+    .nav-mobile .nav-page-list li.active{
+        padding-bottom: 10px;
+    }
+    
 }

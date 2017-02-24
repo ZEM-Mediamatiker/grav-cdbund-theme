@@ -1,0 +1,24 @@
+ {% block pagecontent %}
+    
+      
+      <a href="#" onclick="$.printPreview.printPreview()" class="hidden-xs icon icon--before icon--print pull-right" title="print"></a>
+          
+        {{ page.content }}
+
+        <nav class="" role="navigation">        
+            <div class="">
+                <ol class="">
+                    {% for page in pages.children %}
+                    {% if page.visible %}
+                    {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                    <li class="{{ current_page }}"><a href="{{ page.url }}">{{ page.menu }}</a></li>
+                    {% endif %}
+                    {% endfor %}                
+                </ol>
+            </div>
+        </nav>
+                  
+      {% include 'partials/page-content-footer.html.twig' %}
+
+  
+{% endblock pagecontent %}

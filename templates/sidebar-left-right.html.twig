@@ -1,0 +1,37 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block pagecontent %}
+
+    <!--Sitenavigation-->
+    {% block sidebarleft %}
+        <div class="col-sm-4 col-md-3 drilldown">
+            {% include 'partials/sidebar-nav-left.html.twig' %}
+        </div>
+    {% endblock sidebarleft %}
+    <!-- END Sitenavigation -->
+    
+    <div class="col-sm-8 col-md-9" id="content">
+        <div class="row">
+                <div class="col-md-8">
+                <div class="visible-xs visible-sm">
+                    <p><a href="#context-sidebar" class="icon icon--before icon--root hidden-print">Context sidebar</a></p>
+                  </div>
+                {% block content %}
+            
+                    {% include 'partials/page-content.html.twig' %}
+
+
+                {% endblock content %}
+                </div>
+        
+
+                {% block sidebarright %}
+
+                    {% include 'partials/sidebar-right.html.twig' %}
+
+                {% endblock sidebarright %}
+    
+        </div>
+    </div>   
+
+{% endblock pagecontent %}

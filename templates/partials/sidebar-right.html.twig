@@ -1,0 +1,59 @@
+ {% block sidebarright %}
+    <div class="col-md-4">
+
+                <!-- Contextual information -->
+                <a name="context-sidebar" class="hidden-print"></a>
+
+                <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="active" role="presentation"><a href="#contact" data-toggle="tab" role="tab" id="ui-tab-193" tabindex="0" aria-selected="true" aria-controls="contact">Kontakt</a></li>
+                    <!--<li role="presentation"><a href="#map" data-toggle="tab" role="tab" id="ui-tab-618" tabindex="-1" aria-selected="false" aria-controls="map">Map</a></li>-->
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content tab-border">
+                    <div class="tab-pane active" id="contact" role="tabpanel" aria-hidden="false" aria-labelledby="ui-tab-193">
+                      <div data-print="contact-info" data-title="Contact">
+                        <address itemprop="address" itemscope="itemscope" itemtype="http://data-vocabulary.org/Address">
+                          <strong itemprop="name">Bundesamt für Bevölkerungsschutz BABS</strong>
+                          <span>Kommunikation</span><br>
+                          <span itemprop="street-address">Monbijoustrasse 51A</span><br>
+                          <span itemprop="locality">3003 Bern</span><br>
+                          <span itemprop="country-name">Schweiz</span>
+                        </address>
+                        <dl class="dl-horizontal">
+                          <dt><abbr title="Phone">Tel.</abbr></dt>
+                          <dd><a href="tel:+41 58 462 55 83">+41 58 462 55 83</a></dd>
+                            <dt>Fax</dt>
+                          <dd>+41 58 462 59 89</dd>
+                        </dl><br>
+                        <p>
+                          <a href="info@babs.admin.ch" class="icon icon--before icon--message">E-Mail</a>
+                        </p>
+                          <br>
+                          <strong>Zeiten Sirenentest 2017</strong><br>
+                          <br>
+                          <p>
+                          Mittwoch, 1. Februar 2017<br>
+                              13:30 - 14:00 Uhr Allg. Alarm<br>
+                              14:15 - 15 Uhr Wasseralarm
+                          </p>
+                      </div>
+                      <p class="hidden-xs"><a href="#" onclick="$.printPreview.printPreview('contact-info')" class="icon icon--before icon--print">Kontaktinformationen drucken</a></p>
+                    </div>
+                    <!--<div class="tab-pane" id="map" role="tabpanel" aria-hidden="true" aria-labelledby="ui-tab-618">
+                      <div data-print="address-info" data-title="Address">
+                        <h3>UNO-Mission New York</h3>
+                        <p>633, Third Avenue<br>
+                        New York, NY10017-6706</p>
+                        <p><img src="http://placehold.it/158x120" alt="Map"></p>
+                        <p><a href="#" class="icon icon--after icon--external">See on the map</a></p>
+                      </div>
+                      <p class="hidden-xs"><a href="#" onclick="$.printPreview.printPreview('address-info')" class="icon icon--before icon--print">Print address infos</a></p>
+                    </div>-->
+                  </div>
+                  
+                  
+                  
+              </div>
+{% endblock sidebarright %}

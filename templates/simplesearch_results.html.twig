@@ -1,0 +1,61 @@
+{% extends 'partials/simplesearch_base.html.twig' %}
+
+{% block pagecontent %}
+    <div class="col-sm-8 col-md-9" id="content">
+        <div class="row">
+            <div class="col-sm-12">
+                
+                <a href="#" onclick="$.printPreview.printPreview()" class="hidden-xs icon icon--before icon--print pull-right" title="print"></a>
+                
+                <!-- Folgende Funktion würde ein Suchfeld auf der Suchergebnis-Seite anzeigen. Um diese Funktionalität zu erhalten, muss das Simple-Search-Template auch hier noch eingebunden werden und ggf. angepasst werden, da es gemäss CD-Bund hier anders aussieht als im Header der Seite.
+
+                <h1 class="text-inline">Suche</h1>
+
+                <br>
+
+                <form action="#" class="form-inline search-box">
+                    <fieldset class="clearfix">
+                        <div class="form-group">
+                            <label for="inputSearch" class="control-label">Search by keyword</label>
+                            <input class="form-control" id="inputSearch" placeholder="Search by keyword" type="text">
+                        </div>
+                        <input class="btn btn-primary" aria-label="Find" value="Find" type="submit">
+                    </fieldset>
+                </form>
+                -->
+
+                <h2>{{"PLUGIN_SIMPLESEARCH.SEARCH_RESULTS"|t}}</h2>
+                
+                <p>
+                    {% set count = search_results ? search_results.count : 0 %}
+
+                    {% if count == 1 %}
+                        {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_SINGULAR"|t(query)|raw }}
+                    {% else %}
+                        {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_PLURAL"|t(query, count)|raw }}
+                    {% endif %}
+                </p>
+                    
+                    
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active" role="presentation"><a href="#contentPages" data-toggle="tab" role="tab" id="ui-tab-574" tabindex="0" aria-selected="true" aria-controls="contentPages">Inhalte mit Ihrem Suchbegriff</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content tab-border">
+                <div class="tab-pane active" id="contentPages" role="tabpanel" aria-hidden="false" aria-labelledby="ui-tab-574">
+                    
+                    <!-- Results -->
+                    {% for page in search_results %}
+                        {% include 'partials/simplesearch_item.html.twig' with {'page':page} %}
+                    {% endfor %}
+
+                </div>
+        
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock pagecontent %}

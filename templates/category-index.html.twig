@@ -1,0 +1,49 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block pagecontent %}
+    
+    <div class="col-sm-10 col-md-10" id="content" style="margin: 0 auto; float:none;">
+        <div class="row">
+                <div class="col-md-12">
+                {% block content %}
+                    <!--<div class="alert alert-warning" role="alert">
+	                   <span class="sr-only">warning:</span> Das ist die Kategorie-Vorlage
+                    </div>-->
+            
+                    <a href="#" onclick="$.printPreview.printPreview()" class="hidden-xs icon icon--before icon--print pull-right" title="print"></a>
+          
+                        {{ page.content }}          
+                    
+                    <table id="sort-table" class="table table-bordered table-sort text-left">
+                        <thead>
+                            <tr>
+                                <th>Titel</th>
+                                <th>Änderungsdatum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for p in page.collection %}
+                                <tr>
+                                    <td><a href="{{ p.url }}">{{ p.title }}</a></td>
+                                    <td>{{ p.modified|date("d.m.Y") }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    {% include 'partials/page-content-footer.html.twig' %}
+                    
+                {% endblock content %}
+                    
+                </div>
+
+                {% block sidebarright %}
+
+                    
+
+                {% endblock sidebarright %}
+    
+        </div>
+    </div>   
+
+{% endblock pagecontent %}

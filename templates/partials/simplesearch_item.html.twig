@@ -1,0 +1,15 @@
+<section class="search-row">
+
+    {% set banner = page.media.images|first %}
+    
+    <article class="search-result">
+        <h4>
+            <a href="{{ page.url }}">
+                {{ page.title }}
+            </a>
+        </h4>
+        <p>
+            {{ page.summary|raw }}
+        </p>
+    </article>
+</section>
